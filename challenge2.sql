@@ -26,10 +26,10 @@ ORDER BY AVG(length) DESC
 
 -- 2.2 Identify which ratings have a mean duration of over two hours in order to help select films for customers who prefer longer movies.
 
-SELECT rating, ROUND(AVG(length),2) 'Mean duration'
+SELECT rating, ROUND(AVG(length),2) AS 'avg_duration'
 FROM film
 GROUP BY rating
-HAVING ROUND(AVG(length),2) > 120
+HAVING avg_duration > 120
 
 --3. Bonus: determine which last names are not repeated in the table actor.
 
